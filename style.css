@@ -1,0 +1,181 @@
+.Voltar {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.voltar {
+    display: flex;
+    align-items: center;
+  }
+
+.link-container {
+    display: flex;
+    color: #8F8881;
+    text-decoration: none;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin: 0;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: left;
+    font-size: 10px;
+    
+}
+
+.form-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-container p {
+    margin-bottom:10px;
+    text-align: left;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sexo-section {
+    margin-bottom: 20px;
+}
+
+.sexo-section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sexo-section select {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.sexo-section select:hover {
+    border-color: #888;
+}
+
+.sexo-section select:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 5px rgba (85, 85, 85, 0.5);
+}
+.form-container label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+.form-container input[type="file"],
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="date"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.input-container input[type="Cidade"]:focus,
+.input-container input[type="Rua"]:focus,
+.input-container input[type="Estado"]:focus,
+.input-container input[type="number"]:focus,
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="tel"]:focus,
+.form-container input[type="date"]:focus {
+    border-color: #f67841;
+    outline: none; 
+    border-width: 1.5px;
+}
+
+.form-container__Upload {
+    position: relative;
+    border: 2px dashed darkgrey;
+    padding: 22px;
+    display: grid;
+    place-content:  center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: center;
+    width: 85%;
+}
+
+.Upload {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.form-container__Upload label {
+    color: #555;
+    pointer-events: none;
+}
+
+.form-container__Upload img {
+    width: 24px;
+    Height :24px;      
+    Top: 13px;
+    margin: auto;
+    display: block;
+    Left: 9.5p x;
+    padding: 10px;
+    Border: 1.5px;
+    color: #8F8881;
+}
+
+.form-Endereço {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.esquerda, .direita {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.direita {
+    width: 75%;
+}
