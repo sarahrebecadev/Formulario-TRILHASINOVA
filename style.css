@@ -20,7 +20,6 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 10px;
     margin: 0;
@@ -35,8 +34,8 @@ body {
     width: 100%;
     text-align: left;
     font-size: 10px;
-    
-}
+    font-family: 'Poppins';font-size: 22px;
+}   
 
 .form-container h1 {
     font-size: 24px;
@@ -179,3 +178,43 @@ body {
 .direita {
     width: 75%;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.custom-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition:  border-color 0.3s,backgroud-color 0.3s;
+    box-sizing: border-box;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.custom-checkbox span {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color:#333;
+}
+
+.custom-checkbox.selected {
+    border-color: #0080ff;
+}
+
