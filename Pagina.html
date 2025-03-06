@@ -1,20 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="image-container1">
-        <a href="index.html" class="link-container">Clique aqui para acessar o formulário</a>
-        <img src="imagem.png" alt="Imagem principal" class="imagem-principal">
+  <form class="form-container" action="#" method="post">
+          <div class="voltar">
+              <img src="image6.png" alt="Seta" class="Voltar">
+              <a href= "index.html" class="link-container">Voltar</a>
+         </div>
+              <h1>Formulario de inscrição</h1>
+              <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas</p>
+              
+              <div class="text">
+              <br>informações do participante<br>  
+              </div>
+
+                <div class="input-group">
+                  <br></br>
+                    <label for="nome"> Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Digite o seu nome completo" required>
+                </div>               
+    
+              <div class="input-group">
+               <label for="nascimento">Data de Nascimento</label>
+               <input type="date" id="nascimento" name="nascimento">            
+             </div>
+    
+            <div class="input-group">
+             <label for="cpf">CPF</label>
+             <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" maxlength="14">
+            </div>
+ 
+           <div class="sexo-section">
+           <label for="sexo">Sexo</label>
+             <select id="sexo" name="sexo">
+             <option value="">Selecione uma opção</option>
+             <option value="masculino"> Masculino</option>
+             <option value="feminino"> Feminino</option>
+             <option value="outro"> Outro</option>
+             <option value="nao_informar"> Prefiro não informar</option>
+             </select>
+            </div>
         
-        <div class="logo-container__image">
-            <img src="imagem3.png" alt="Imagem interna1" class="imagem-interna">
-            <img src="imagem4.png" alt="Imagem interna2" class="imagem-interna">
-        </div>
-    </div>
+                   <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite o seu email" required>
+                 </div>
+
+                <div class="input-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" placeholder="Digite o seu telefone" required>
+                </div>
+                       
+                <p>Documento de identidade</p>
+
+                <div class="form-container__Upload">
+                <img src="image.png">
+                <label for="file">Clique aqui para<br>selecionar o arquivo</br></label>
+                <input class="Upload" type="file" id="file" name="file">
+                <span id="file-name"></span>
+                </div>
+
+                
+              <div class="text">
+                <br>Endereço residencial<br>
+              </div>
+
+                <div class="input-group">
+                  <br></br>
+                    <label for="CEP">CEP</label>
+                    <input type="text" id="CEP" placeholder="Digite o seu CEP" required>
+                </div>  
+
+              <div class="form-Endereço">
+                <div class="esquerda">
+                  <div class="form-group rua">
+                      <label for="Rua">Rua</label>
+                      <input type="text" id="Rua" placeholder="">
+                  </div>
+                  <div class="form-group cidade">
+                      <label for="Cid">Cidade</label>
+                      <input type="text" id="Cid" placeholder="">
+                  </div>
+                </div>
+
+                  <div class="direita">
+                      <div class="form-group numero">
+                        <label for="number">Numero</label>
+                        <input type="number" id="number" class="tamanho" placeholder="">
+                      </div>
+
+                    <div class="form-group estado">
+                        <label for="Est">Estado</label>
+                        <input type="text" id="Est" class="tamanho" placeholder="">
+                    </div>
+                  </div>
+              </div>
+
+              <p>Comprovante de residência</p>
+
+              <div class="form-container__Upload">
+                <img src="image.png">
+                <label for="file">Clique aqui para<br>selecionar o arquivo</br></label>
+                <input class="Upload" type="file" id="file" name="file">
+                <span id="file-name"></span>
+                </div>
+
+                <div class="text">
+                  <br>Trilhas de apredizagem<br>
+                </div>
+
+                <p>Selecione apenas uma trilha</p>
+
+  </form>
 </body>
-</html>
+</html

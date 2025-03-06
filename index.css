@@ -1,27 +1,16 @@
-.image-container1 {
-    position: relative;
-    width: 500px; 
-    height: auto;
-  }
-  
-  .imagem-principal {
-    width: 100%;
-    height: auto; 
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-.logo-container__image {
-  position: absolute;
-  bottom: 60px;
-  left: 150px;
-  align-items: center;
-}
-
-.imagem-interna {
-  width: 100px;
-  height: auto;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #e2e2e2,#c9d6ff)
 }
-
