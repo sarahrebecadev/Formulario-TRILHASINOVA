@@ -8,20 +8,21 @@
 
 }
 
+
 body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     min-height: 100vh;
     margin-inline-end: 150px;
-    background: image()
+    background:image-set(url('fundo.png'));
 }
-
+  
 .form-box {
     position: relative;
     right: 0;
-    width: 370px;
-    height: 440px;
+    width: 400px;
+    height: 500px;
     background:rgb(254, 254, 254);
     display: flex;
     align-items: center;
@@ -34,10 +35,9 @@ body {
 form {
     width: 100%;
 }
+form.container h1 {
+    font-size: 20px;
 
-.container h1 {
-    font-size: 36px;
-    margin: -10px 0;
 }
 
 .input-box {
@@ -46,7 +46,7 @@ form {
 }
 
 .input-box input {
-    width: 70%;
+    width: 75%;
     padding: 13px 50px 13px 20px;
     background: #eee;
     border-radius: 8px;
@@ -55,20 +55,22 @@ form {
     font-size: 16px;
     color: #333;
     font-weight: 500;
+   
 }
 
 .input-box input::placeholder {
     color: #888;
     font-weight: 400;
+    
 }
 
 .input-box i {
-    position: absolute;
+    position:-ms-page;
     right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 200%;
     font-size: 20px;
     color: #888;
+   
 }
 
 .forgot-link {
@@ -81,15 +83,15 @@ form {
 
 }
 
-.btn {
-    width: 100%;
-    height: 48px;
+.botao {
+    width: 69%;
+    height: 40px;
     background: #7494ec;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     border:none;
     cursor:pointer;
-    font-size: 16px;
+    font-size: 15px;
     color: #fff;
     font-weight: 600;
 }
@@ -97,11 +99,12 @@ form {
 .container p{
     font-size: 14.5px;
     margin: 15px 0;
+
 }
 
 .social-icons a {
     display: inline-flex;
-    padding: 10px;
+    padding: 12px;
     border: 2px solid #ccc;
-    
+    border-radius: 15px;
 }
