@@ -72,9 +72,10 @@ body {
 }
 
 .form-container p {
+    font-weight: bold;
     margin-bottom: 10px;
     text-align: left;
-    opacity: 0.6;
+    opacity: 0.5;
     font-size: 14px;
 }
 
@@ -95,7 +96,7 @@ body {
 }
 
 .sexo-section select {
-    width: 94%;
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -127,7 +128,7 @@ body {
 .form-container input[type="email"],
 .form-container input[type="tel"],
 .form-container input[type="date"] {
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -135,9 +136,6 @@ body {
     font-size: 15px;
 }
 
-.input-container input[type="Cidade"]:focus,
-.input-container input[type="Rua"]:focus,
-.input-container input[type="Estado"]:focus,
 .input-container input[type="number"]:focus,
 .form-container input[type="text"]:focus,
 .form-container input[type="email"]:focus,
@@ -158,7 +156,7 @@ body {
     margin-bottom: 20px;
     font-size: 15px;
     text-align: center;
-    width: 85%;
+    width: 95%;
 }
 
 .Upload {
@@ -203,13 +201,13 @@ body {
 }
 
 .direita {
-    width: 75%;
+    width: 100%;
 }
 
 .container {
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+    gap: 25px; 
     padding: 0;
     border-radius: 8px;
 }
@@ -219,8 +217,8 @@ body {
     flex-direction: column; 
     justify-content: left;
     justify-content: center; 
-    height: 100px; 
-    width: 220px;  
+    height: 140px; 
+    width: 260px;  
     cursor: pointer;
     padding: 10px;
     border: 2px solid #ccc;
@@ -244,7 +242,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
@@ -267,7 +265,7 @@ body {
 }
 
 .custom-checkbox span {
-    font-size: 14px;
+    font-size: 15px;
     color: #333;
     text-align: center;
 }
@@ -287,6 +285,7 @@ body {
 }
 
 .text_box {
+    text-align: center;
     font-size: 14px;
     color: #333;
     margin: 0;
@@ -299,9 +298,8 @@ body {
 .botao-container {
     display: flex;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 30px;
     margin-top: 30px;
-    margin-right: 42px;
 }
 
 .botao {
@@ -309,16 +307,17 @@ body {
     border: none;
     border-radius: 10px;
     color: white;
-    padding: 10px 40px;
+    padding: 10px 35px;
     text-align: center;
     font-size: 14px;
 }
 
 .Cancelar {
+    background-color: white;
     border: 1px solid #f3541c;
     border-radius: 10px;
     color: #f3541c;
-    padding: 15px 40px;
+    padding: 14px 35px;
     font-size: 14px;
     margin-right: 0;
 }
