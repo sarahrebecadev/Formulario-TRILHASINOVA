@@ -5,35 +5,30 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+
 }
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(90deg, #e2e2e2,#c9d6ff)
-}
-
-.container {
-position: relative;
-width: 850px;
-height: 550px;
-background: #fff;
-border-radius: 30px;
-box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    margin-inline-end: 150px;
+    background: image()
 }
 
 .form-box {
-    position: absolute;
+    position: relative;
     right: 0;
-    width: 50%;
-    height: 100%;
-    background:seagreen;
+    width: 370px;
+    height: 440px;
+    background:rgb(254, 254, 254);
     display: flex;
     align-items: center;
     color: #333;
     text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, .2);  
 }
 
 form {
@@ -51,7 +46,7 @@ form {
 }
 
 .input-box input {
-    width: 100%;
+    width: 70%;
     padding: 13px 50px 13px 20px;
     background: #eee;
     border-radius: 8px;
