@@ -15,7 +15,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin-inline-end: 90px;
-    background:image-set(url('fundo.png'));
+    background:image-set(url('Capa\ \(3\).png'));
   
 }
 /*cabeçalho de boas vindas*/
@@ -24,8 +24,11 @@ body {
     width: 100%;
     max-width: 800px;
     padding: 0 85px;
+    top: -100px;
     text-align: left;
     color: #fff;
+    line-height: 2;
+    
 }
 /*iamgem do trilhas/inovação e etc*/
 
