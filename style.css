@@ -22,7 +22,7 @@ body {
     max-width: 800px;
     width: 100%;
     text-align: left;
-    font-size: 10px;
+    font-size: 10x;
     font-family: 'Poppins';font-size: 10px;
     overflow-y: auto;
     box-sizing: border-box;
@@ -72,21 +72,18 @@ body {
 }
 
 .form-container p {
-    font-weight: bold;
     margin-bottom: 10px;
     text-align: left;
     opacity: 0.5;
     font-size: 14px;
+    margin-top: 20px;
 }
 
 .text {
+    font-weight: bold;
     font-size: 14px;
-    font-weight: 700;
     margin-bottom: 10px;
-}
-
-.sexo-section {
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .sexo-section label {
@@ -98,21 +95,18 @@ body {
 .sexo-section select {
     width: 100%;
     padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 20px;
     opacity: 0.7;
     cursor: pointer;
 }
 
-.sexo-section select:hover {
-    border-color: #888;
-}
-
 .sexo-section select:focus {
     outline: none;
-    border-color: #555;
-    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+    border-color: #f67841;
+    border-width: 1.5px;
 }
 
 .form-container label {
@@ -133,7 +127,7 @@ body {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .input-container input[type="number"]:focus,
@@ -302,7 +296,7 @@ body {
     margin-top: 30px;
 }
 
-.botao {
+.inscricao {
     background-color: #f3541c;
     border: none;
     border-radius: 10px;
