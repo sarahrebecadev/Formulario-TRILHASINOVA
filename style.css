@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -59,15 +69,15 @@ body {
     display: flex;
     color: #8F8881;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
 }
 
 .form-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 23px;
+    margin-bottom: 15px;
     text-align: left;
 }
 
@@ -75,13 +85,13 @@ body {
     margin-bottom: 10px;
     text-align: left;
     opacity: 0.5;
-    font-size: 14px;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-top: 1px;
 }
 
 .text {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 19px;
     margin-bottom: 10px;
     margin-top: 20px;
 }
@@ -98,7 +108,7 @@ body {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 15px;
     opacity: 0.7;
     cursor: pointer;
 }
@@ -127,7 +137,7 @@ body {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .input-container input[type="number"]:focus,
@@ -209,8 +219,7 @@ body {
 .custom-checkbox {
     display: flex;
     flex-direction: column; 
-    justify-content: left;
-    justify-content: center; 
+    justify-content: center;
     height: 140px; 
     width: 260px;  
     cursor: pointer;
@@ -218,7 +227,7 @@ body {
     border: 2px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s, background-color 0.3s;
-    text-align: center;
+    text-align: cet;
     margin-top: 10px;
 }
 
@@ -280,7 +289,7 @@ body {
 
 .text_box {
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     color: #333;
     margin: 0;
 }
