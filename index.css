@@ -37,8 +37,27 @@ body {
     width: 100%;
     max-width: 800px;
     padding: 0 85px;
-    
+   
+  /*botao de dowload*/ 
  }
+.download-link{
+    display: flex;
+    width: 27%;
+    padding: 10px 20px;
+    background-color: #2135A6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    justify-content: right;
+    align-items: center;
+    
+
+}
+
 
 
   /*caixa do login*/
