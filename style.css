@@ -219,16 +219,18 @@ body {
 .custom-checkbox {
     display: flex;
     flex-direction: column; 
-    justify-content: center;
-    height: 140px; 
+    align-items: center;
+    justify-content: flex-start;
+    height: 160px; 
     width: 260px;  
     cursor: pointer;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.3s, background-color 0.3s;
-    text-align: cet;
+    text-align: center;
     margin-top: 10px;
+    position: relative;
 }
 
 .custom-checkbox input[type="checkbox"] {
@@ -236,7 +238,6 @@ body {
 }
 
 .custom-checkbox .checkmark {
-    position: relative;
     width: 20px; 
     height: 20px;
     border: 2px solid #ccc;
@@ -245,9 +246,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+    position: relative;
 }
 
+.custom-checkbox .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-checkbox img {
+    max-width: 30%;
+    height: auto;
+}
+
+.custom-checkbox .texto {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+}
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
     background-color: #f3541c;
     border-color: #f3541c;
@@ -257,7 +278,7 @@ body {
     content: '✔';
     position: absolute;
     top: 0;
-    left: 5px; 
+    left: 25%; 
     font-size: 12px;
     color: white;
     transition: left 0.3s ease; 
@@ -282,8 +303,8 @@ body {
 }
 
 .input_box {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
 }
 
