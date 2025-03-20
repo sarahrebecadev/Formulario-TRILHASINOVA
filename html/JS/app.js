@@ -120,6 +120,6 @@ function validarFormulario(event) {
 window.onload = function() {
     let botaoMensagem = document.getElementById("mensagem");
     botaoMensagem.onclick = function () {
-        validarFormulario(event);
+        validarFormulario(Event);
     };
 }
