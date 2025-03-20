@@ -15,8 +15,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin-inline-end: 90px;
-    background:image-set(url(../images/Capa\ \(3\).png));
-  
+    background:image-set(url(../images/login.png));
 }
 /*cabeçalho de boas vindas*/
 .boasvindas{
