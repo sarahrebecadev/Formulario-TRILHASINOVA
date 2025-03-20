@@ -111,15 +111,19 @@ function validarFormulario(event) {
         return;
     }
 
-    // Se passar por todas as validações
-    alert('Formulário enviado com sucesso!');
-    // Aqui você pode enviar o formulário ou realizar outra ação
+    // Se p
 }
 
 // Evento para o botão de envio
-window.onload = function() {
+function mensagem()
+{
+    alert("Sua inscrição foi feita como sucesso");
+}
+
+window.onload=function(){
     let botaoMensagem = document.getElementById("mensagem");
+
     botaoMensagem.onclick = function () {
-        validarFormulario(Event);
+        mensagem() ;
     };
 }
