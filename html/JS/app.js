@@ -74,17 +74,52 @@ function selecionarCheckbox(checkbox) {
     });
 }
 
-// inscrição 
+// Validação do formulário
+function validarFormulario(event) {
+    event.preventDefault();  // Impede o envio do formulário
 
-function mensagem()
-{
-    alert("Sua inscrição foi feita como sucesso");
+    // Obtendo os valores dos campos
+    const nome = document.getElementById('nome').value;
+    const nascimento = document.getElementById('nascimento').value;
+    const cpf = document.getElementById('cpf').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const telefone = document.querySelector('input[name="telefone"]').value;
+    const sexo = document.getElementById('sexo').value;
+    const cep = document.querySelector('input[name="CEP"]').value;
+    const termo1 = document.querySelector('input[name="termo"]:checked');
+    const termo2 = document.querySelector('input[name="checkbox"]:checked');
+  
+    // Verificando se todos os campos obrigatórios estão preenchidos
+    if (!nome || !nascimento || !cpf || !email || !telefone || !sexo || !cep || !termo1 || !termo2) {
+        alert('Por favor, preencha todos os campos obrigatórios e aceite os termos.');
+        return;
+    }
+
+    // Validando o formato do e-mail
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Por favor, insira um e-mail válido.');
+        return;
+    }
+
+    // Verificando se foi selecionada apenas uma trilha
+    const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
+    const checkedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+
+    if (checkedCount !== 1) {
+        alert('Você deve selecionar apenas uma trilha de aprendizagem.');
+        return;
+    }
+
+    // Se passar por todas as validações
+    alert('Formulário enviado com sucesso!');
+    // Aqui você pode enviar o formulário ou realizar outra ação
 }
 
-window.onload=function(){
+// Evento para o botão de envio
+window.onload = function() {
     let botaoMensagem = document.getElementById("mensagem");
-
     botaoMensagem.onclick = function () {
-        mensagem() ;
+        validarFormulario(event);
     };
 }
