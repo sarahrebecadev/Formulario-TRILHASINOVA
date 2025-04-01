@@ -11,58 +11,22 @@
 /*corpo do formulario como um todo e o fundo de texto*/
 body {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 100vh;
-    margin-inline-end: 90px;
-    background:image-set(url(../images/image.png));
-    width: 90%;
-    height: 100%;   
-    background-size: cover;
-}
-/*cabeçalho de boas vindas*/
-.boasvindas{
-    position: relative ;
-    width: 100%;
-    max-width: 800px;
-    padding: 0 85px;
-    top: -100px;
-    text-align: left;
-    color: #fff;
-    line-height: 2;
-    
-}
-/*iamgem do trilhas/inovação e etc*/
-
- .image{
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    padding: 0 85px;
-   
-  /*botao de dowload*/ 
- }
-.download-link , .cadastre-se{
-    display: flex;
-    width: 27%;
-    padding: 10px 20px;
-    background-color: #2135A6;
-    color: #fff; 
-    text-decoration: none;
-    border-radius: 15px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-bottom: 20px;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    background:image-set(url(../images/image.png));
+    background-size: cover;
 }
+
+/*iamgem do trilhas/inovação e etc*/
+
+
 
 
 
   /*caixa do login*/
 .form-box {
-    position: relative;
+    position: center;
     right: 0;
     width: 390px;
     height: 520px;
@@ -145,4 +109,3 @@ form.container h1 {
     margin: 15px 0;
 
 }
-
