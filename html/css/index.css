@@ -29,8 +29,7 @@ body {
     top: -100px;
     text-align: left;
     color: #fff;
-    line-height: 2;
-    
+    line-height: 2.3;
 }
 /*iamgem do trilhas/inovação e etc*/
 
@@ -40,7 +39,7 @@ body {
     max-width: 800px;
     padding: 0 85px;
    
-  /*botao de dowload*/ 
+  /*botao de dowload e cadastre-se*/ 
  }
 .download-link , .cadastre-se{
     display: flex;
@@ -56,6 +55,28 @@ body {
     margin-bottom: 20px;
     justify-content: center;
     align-items: center;
+}
+
+.cadastre-se a{
+    text-decoration: none;
+    color: #fff; 
+}
+
+.cadastre-se , .download-link{
+    transition: transform var(--transition-speed);
+}
+
+.cadastre-se:hover{
+    transform: scale(1.05);
+}
+.download-link:hover{
+    transform: scale(1.05);
+}
+
+.container p{
+    font-size: 14.5px;
+    margin: 15px 0;
+
 }
 
 
@@ -118,7 +139,7 @@ form.container h1 {
 }
 
 .forgot-link {
-    margin: -15px 0 15px; 
+    margin: -15 px 0 15px; 
 }
 .forgot-link a{
     font-size: 14.5px;
@@ -139,6 +160,14 @@ form.container h1 {
     color: #fff;
     font-weight: 600;
 }
+.botao {
+    transition: transform var(--transition-speed);
+}
+
+.botao:hover{
+    transform: scale(1.05);
+}
+
 
 .container p{
     font-size: 14.5px;

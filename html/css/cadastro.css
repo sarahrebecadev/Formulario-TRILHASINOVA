@@ -17,11 +17,29 @@ body {
     background:image-set(url(../images/image.png));
     background-size: cover;
 }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent;
+}
 
 /*iamgem do trilhas/inovação e etc*/
 
+.logo img {
+    height: 2.5rem;
+    width: auto;
+    transition: transform var(--transition-speed);
+}
 
-
+.logo:hover img {
+    transform: scale(1.05);
+}
 
 
   /*caixa do login*/
@@ -102,6 +120,13 @@ form.container h1 {
     font-size: 15px;
     color: #fff;
     font-weight: 600;
+}
+.botao {
+    transition: transform var(--transition-speed);
+}
+
+.botao:hover{
+    transform: scale(1.05);
 }
 
 .container p{
