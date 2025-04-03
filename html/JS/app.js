@@ -1,129 +1,230 @@
-// validação de numero 
+// Validação de número de telefone
 const handlePhone = (event) => {
-    let input = event.target
-    input.value = phoneMask(input.value)
-  }
-  
-  const phoneMask = (value) => {
-    if (!value) return ""
-    value = value.replace(/\D/g,'')
-    value = value.substring(0,11)
-    value = value.replace(/(\d{2})(\d)/,"($1) $2")
-    value = value.replace(/(\d)(\d{4})$/,"$1-$2")
-    return value
-  }
+  let input = event.target;
+  input.value = phoneMask(input.value);
+};
 
-// validação de email 
+const phoneMask = (value) => {
+  if (!value) return "";
+  value = value.replace(/\D/g, '');
+  value = value.substring(0, 11);
+  value = value.replace(/(\d{2})(\d)/, "($1) $2");
+  value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+  return value;
+};
+
+// Validação de e-mail com expressão regular mais robusta
 function validacaoEmail(field) {
-    const email = field.value.trim();  // Remove espaços no início e no fim
-    const usuario = email.substring(0, email.indexOf("@"));
-    const dominio = email.substring(email.indexOf("@") + 1);
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const isValid = emailRegex.test(field.value);
 
-    // Validações:
-    if (
-        usuario.length >= 1 &&  // usuário não pode ser vazio
-        dominio.length >= 3 &&  // domínio deve ter ao menos 3 caracteres
-        usuario.search(" ") === -1 &&  // usuário não pode ter espaços
-        dominio.search(" ") === -1 &&  // domínio não pode ter espaços
-        dominio.search(".") !== -1 &&  // domínio deve ter pelo menos um ponto
-        dominio.indexOf(".") >= 1 &&  // o ponto não pode estar no início
-        dominio.lastIndexOf(".") < dominio.length - 1 // o ponto não pode estar no final
-    ) {
-        // Se for válido:
-        document.getElementById("msgemail").innerHTML = "E-mail válido";
-        document.getElementById("msgemail").style.color = "green";  // Mensagem verde
-    } else {
-        // Se for inválido:
-        document.getElementById("msgemail").innerHTML = "<font color='red'>E-mail inválido </font>";
-        document.getElementById("msgemail").style.color = "red";  // Mensagem vermelha
-    }
+  const msgEmail = document.getElementById("msgemail");
+  if (isValid) {
+    msgEmail.innerHTML = "<font color='green'>E-mail válido </font>";
+  } else {
+    msgEmail.innerHTML = "<font color='red'>E-mail inválido </font>";
+  }
+  return isValid;
 }
 
-// validação de cpf 
+// Máscara de data
+function formatarData(input) {
+  let valor = input.value.replace(/\D/g, '');
+  
+  // Aplica a máscara
+  if (valor.length > 4) {
+    valor = valor.replace(/(\d{2})(\d{2})(\d{0,4})/, '$1/$2/$3');
+  } else if (valor.length > 2) {
+    valor = valor.replace(/(\d{2})(\d{0,2})/, '$1/$2');
+  }
+
+  input.value = valor;
+}
+
+// Validação de data
+function validaData(data) {
+  data = data.trim();
+  if (!/^\d{2}\/\d{2}\/\d{4}$/.test(data)) return false;
+
+  const [diaStr, mesStr, anoStr] = data.split('/');
+  const dia = parseInt(diaStr, 10);
+  const mes = parseInt(mesStr, 10);
+  const ano = parseInt(anoStr, 10);
+
+  if (mes < 1 || mes > 12 || dia < 1) return false;
+
+  const diasNoMes = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  if ((ano % 400 === 0) || (ano % 100 !== 0 && ano % 4 === 0)) diasNoMes[2] = 29;
+  if (dia > diasNoMes[mes]) return false;
+
+  const hoje = new Date();
+  const dataNasc = new Date(ano, mes - 1, dia);
+  return dataNasc <= hoje;
+}
+
+// Máscara de CPF
 let cpf = document.querySelector("#cpf");
 
-cpf.addEventListener("blur", function(){
-   if(cpf.value) cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+cpf.addEventListener("blur", function() {
+  if (cpf.value) cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/, "-");
 });
 
-// validação de cep 
+// Validação de CPF
+function validaCPF(cpf) {
+  cpf = cpf.replace(/\D/g, '');
 
-const handleZipCode = (event) => {
-    let input = event.target
-    input.value = zipCodeMask(input.value)
+  if (cpf.length !== 11) return "CPF deve ter 11 dígitos";
+  if (/^(\d)\1{10}$/.test(cpf)) return "CPF inválido (números repetidos)";
+
+  let soma = 0;
+  for (let i = 0; i < 9; i++) {
+    soma += parseInt(cpf.charAt(i)) * (10 - i);
   }
-  
-  const zipCodeMask = (value) => {
-    if (!value) return ""
-    value = value.replace(/\D/g,'')
-    value = value.substring(0,8)
-    value = value.replace(/(\d{5})(\d)/,'$1-$2')
-    return value
+  let resto = (soma * 10) % 11;
+  if (resto === 10 || resto === 11) resto = 0;
+  if (resto !== parseInt(cpf.charAt(9))) return "CPF inválido";
+
+  soma = 0;
+  for (let i = 0; i < 10; i++) {
+    soma += parseInt(cpf.charAt(i)) * (11 - i);
   }
+  resto = (soma * 10) % 11;
+  if (resto === 10 || resto === 11) resto = 0;
+  if (resto !== parseInt(cpf.charAt(10))) return "CPF inválido";
 
-//Seleção de checkbox
-function selecionarCheckbox(checkbox) {
-    // Seleciona todos os checkboxes dentro da div container
-    var checkboxes = document.querySelectorAll('.container input[type="checkbox"]');
+  return "CPF válido";
+}
 
-    // Se o checkbox foi marcado, desmarca todos os outros
-    checkboxes.forEach(function(item) {
-        if (item !== checkbox) {
-            item.checked = false; // Desmarca os outros checkboxes
+// Máscara de CEP
+function mascaraCEP(input) {
+  const valor = input.value.replace(/\D/g, '');
+  input.value = valor.replace(/^(\d{5})(\d)/, '$1-$2');
+}
+
+// Validação de CEP
+(function() {
+  const cep = document.querySelector("input[name=cep]");
+  cep.addEventListener('blur', e => {
+    const value = cep.value.replace(/[^0-9]+/, '');
+    const url = `https://viacep.com.br/ws/${value}/json/`;
+    fetch(url)
+      .then(response => response.json())
+      .then(json => {
+        if (json.logradouro) {
+          document.querySelector('input[name=rua]').value = json.logradouro;
+          document.querySelector('input[name=cidade]').value = json.localidade;
+          document.querySelector('input[name=estado]').value = json.uf;
         }
-    });
+      });
+  });
+})();
+
+// Seleção de checkbox
+function selecionarCheckbox(checkbox) {
+  const checkboxes = document.querySelectorAll('.container input[type="checkbox"]');
+  checkboxes.forEach(function(item) {
+    if (item !== checkbox) {
+      item.checked = false;
+    }
+  });
 }
 
 // Validação do formulário
 function validarFormulario(event) {
-    event.preventDefault();  // Impede o envio do formulário
+  event.preventDefault();
 
-    // Obtendo os valores dos campos
-    const nome = document.getElementById('nome').value;
-    const nascimento = document.getElementById('nascimento').value;
-    const cpf = document.getElementById('cpf').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const telefone = document.querySelector('input[name="telefone"]').value;
-    const sexo = document.getElementById('sexo').value;
-    const cep = document.querySelector('input[name="CEP"]').value;
-    const termo1 = document.querySelector('input[name="termo"]:checked');
-    const termo2 = document.querySelector('input[name="checkbox"]:checked');
-  
-    // Verificando se todos os campos obrigatórios estão preenchidos
-    if (!nome || !nascimento || !cpf || !email || !telefone || !sexo || !cep || !termo1 || !termo2) {
-        alert('Por favor, preencha todos os campos obrigatórios e aceite os termos.');
-        return;
+  let formularioValido = true;
+  const elementos = {
+    nome: document.getElementById('nome'),
+    data: document.getElementById('data'),
+    cpf: document.getElementById('cpf'),
+    email: document.querySelector('input[name="email"]'),
+    telefone: document.querySelector('input[type="tel"]'),
+    sexo: document.getElementById('sexo'),
+    cep: document.querySelector('input[name="cep"]'),
+    termo1: document.querySelectorAll('.box_termo input[type="checkbox"]')[0],
+    termo2: document.querySelectorAll('.box_termo input[type="checkbox"]')[1],
+    trilhas: document.querySelectorAll('.container input[type="checkbox"]')
+  };
+
+  // Mensagens de erro dinâmicas
+  const mensagemErro = (campo, mensagem) => {
+    const msgElement = document.getElementById(campo);
+    if (msgElement) {
+      msgElement.innerHTML = `<font color='red'>${mensagem}</font>`;
     }
+  };
 
-    // Validando o formato do e-mail
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, insira um e-mail válido.');
-        return;
-    }
+  if (!elementos.nome.value.trim()) {
+    mensagemErro("msgNome", "Por favor, preencha seu nome completo");
+    formularioValido = false;
+  }
 
-    // Verificando se foi selecionada apenas uma trilha
-    const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
-    const checkedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+  if (!validaData(elementos.data.value)) {
+    mensagemErro("msgData", "Data de nascimento inválida (use DD/MM/AAAA)");
+    formularioValido = false;
+  }
 
-    if (checkedCount !== 1) {
-        alert('Você deve selecionar apenas uma trilha de aprendizagem.');
-        return;
-    }
+  if (!elementos.cpf.value || elementos.cpf.value.replace(/\D/g, '').length !== 11) {
+    mensagemErro("msgCpf", "CPF inválido (deve ter 11 dígitos)");
+    formularioValido = false;
+  }
 
-    // Se p
+  if (!validacaoEmail(elementos.email)) {
+    mensagemErro("msgEmail", "Por favor, insira um e-mail válido");
+    formularioValido = false;
+  }
+
+  if (elementos.telefone.value.replace(/\D/g, '').length < 11) {
+    mensagemErro("msgTelefone", "Telefone inválido (inclua DDD)");
+    formularioValido = false;
+  }
+
+  if (!elementos.sexo.value) {
+    mensagemErro("msgSexo", "Selecione seu sexo");
+    formularioValido = false;
+  }
+
+  if (elementos.cep.value.replace(/\D/g, '').length !== 8) {
+    mensagemErro("msgCep", "CEP inválido");
+    formularioValido = false;
+  }
+
+  // Verificar checkboxes de trilha
+  const trilhasSelecionadas = Array.from(elementos.trilhas).filter(cb => cb.checked).length;
+  if (trilhasSelecionadas !== 1) {
+    mensagemErro("msgTrilhas", "Selecione exatamente UMA trilha de aprendizagem");
+    formularioValido = false;
+  }
+
+  // Verificar termos
+  if (!elementos.termo1.checked || !elementos.termo2.checked) {
+    mensagemErro("msgTermos", "Aceite todos os termos para continuar");
+    formularioValido = false;
+  }
+
+  // Se tudo estiver válido
+  if (formularioValido) {
+    alert('✅ Inscrição concluída com sucesso!');
+
+    setTimeout(() => {
+      window.location.href = "Pagina.html"; // Voltar para a página de login
+    }, 500);
+  }
 }
 
-// Evento para o botão de envio
-function mensagem()
-{
-    alert("Sua inscrição foi feita como sucesso");
-}
+// Configuração inicial quando a página carrega
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('input[name="email"]').addEventListener('blur', function() {
+    validacaoEmail(this);
+  });
 
-window.onload=function(){
-    let botaoMensagem = document.getElementById("mensagem");
+  document.getElementById('mensagem').addEventListener('click', validarFormulario);
 
-    botaoMensagem.onclick = function () {
-        mensagem() ;
-    };
-}
+  // Evento de clique no botão de cancelamento
+  document.querySelector('.Cancelar').addEventListener('click', function() {
+    if (confirm('Deseja realmente cancelar? Os dados preenchidos serão apagados.')) {
+      window.location.href = "index.html"; // Redireciona para a página inicial
+    }
+  });
+});
