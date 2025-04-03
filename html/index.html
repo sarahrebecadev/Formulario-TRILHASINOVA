@@ -26,13 +26,15 @@
     </div>
 
     <div class="input-group">
-      <label for="nascimento"><h3>Data de Nascimento:</h3></label>
-      <input type="date" id="nascimento" name="nascimento">
+      <label for="data"><h3>Data de Nascimento:</h3></label>
+      <input type="text" id="data" placeholder="dd/mm/aaaa" oninput="formatarData(this)" onblur="document.getElementById('data-validation').textContent = validaData(this.value) ? 'Data válida' : 'Data inválida'">
+      <div><span>Resultado:</span> <span id="data-validation"></span></div>
     </div>
 
     <div class="input-group">
       <label for="cpf"><h3>CPF</h3></label>
-      <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" maxlength="11">
+      <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" onkeyup="document.getElementById('cpf-validation').innerHTML = validaCPF(this.value)" maxlength="14">
+      <div><b>Resultado</b> <span id="cpf-validation"></span></div>
     </div>
 
     <div class="sexo-section">
@@ -48,9 +50,10 @@
 
     <div class="input-group">
       <label for="email"><h3>E-mail</h3></label>
-      <input type="text" name="email" onblur="validacaoEmail(f1.email)"  maxlength="60" size='65' placeholder="Digite o seu email" required>
+      <input type="text" id="email" name="email" onblur="validacaoEmail(this)"  maxlength="60" size='65' placeholder="Digite o seu email" required>
+      <div id="msgemail"></div>
     </div>
-
+    
     <div class="input-group">
       <label for="telefone"><h3>Telefone</h3></label>
       <input type="tel" maxlength="15" onkeyup="handlePhone(event)" placeholder="Digite o seu telefone" required>
@@ -172,6 +175,7 @@
       <button class="Cancelar">Cancelar</button>
       <button class="inscricao" id="mensagem">Fazer inscrição</button>
     </div>
+
   </form>
       <div class="imagem">
         <img src="images/formulario.png" alt="">
