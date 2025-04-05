@@ -1,0 +1,142 @@
+ <!-- Uma base de como vai ficar a tela depois do login -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trilhas Inova</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Menu Lateral */
+    .sidebar {
+      width: 220px;
+      background: #f4f4f4;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .sidebar p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0;
+      display: block;
+    }
+
+    /* Área principal */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background: #1d48c4;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 20px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 600px;
+    }
+
+    .progress-bar {
+      width: 200px;
+      height: 10px;
+      background: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 20px;
+    }
+
+    .progress-bar div {
+      height: 100%;
+      width: 100%;
+      background: #5cbc5f;
+    }
+
+    .button {
+      background: #1d90f5;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: #187bd1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <img src="https://via.placeholder.com/80" alt="Avatar" />
+    <p>000.000.00-00</p>
+    <a href="#">🏠 home</a>
+    <a href="#">🔑 Altere a Senha</a>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>trilhas | INOVA</h1>
+      <a href="#" style="color: white;">Sair</a>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <span>📨 Inscrição Trilhas Inova 2B</span>
+        <div class="progress-bar"><div></div></div>
+        <a href="#" class="button">Comprovante</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

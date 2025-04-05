@@ -9,6 +9,7 @@
 }
 
 body, html {
+    display: flex;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -49,7 +50,7 @@ body {
 
 .imagem img {
     width: 800px;
-    height: 700px;  
+    height: 750px;  
     object-fit:cover;
 }
 

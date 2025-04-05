@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadastro.css">
-    <title>Login</title>
+    <title>Cadastro do Participante</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <header>
@@ -18,7 +18,7 @@
 
     <div class="form-box login">
 
-        <form action="">
+        <form id="formCadastro">
             <h1>Cadastre-se</h1>
             <div class="input-box">
 
@@ -41,9 +41,12 @@
                 <button class = "botao" onclick="cadastrar()">Confirmar</button>
                 
             </div>
+
+            <div id="mensagemEnvio" class="mensagem-envio">Enviando dados...</div>
+
             
         </form> 
-        <script src="JS/script.js"></script>
+          <script src="JS/script.js"></script>
    
 </body>
 

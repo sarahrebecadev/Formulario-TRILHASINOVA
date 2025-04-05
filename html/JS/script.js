@@ -1,108 +1,76 @@
- const spans = documentquerySelectorAll ('.span-required')
- const campos = documentquerySelectorAll ('.required')
-
- function setError(index){
-    campos[index].style.border= '2px solid #e63636'
- }
 
 
 
-// Função para validar CPF
-function validarCPF(cpf) {
-    cpf = cpf.replace(/[^\d]/g, ''); // Remove qualquer caractere que não seja número
+//calculo de validaçõa do cpf
+function somenteNumeros(e) {
+    e.target.value = e.target.value.replace(/\D/g, '');
+  }
 
-    // Verifica se o CPF tem 11 dígitos
-    if (cpf.length !== 11) return false;
+  function validarCPF(cpf) {
+    cpf = cpf.replace(/[^\d]+/g, '');
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
 
-    // Verifica se o CPF é uma sequência de números repetidos, o que é inválido
-    if (/^(\d)\1{10}$/.test(cpf)) return false;
-
-    // Validação dos dígitos verificadores
     let soma = 0;
-    let resto;
-
-    // Validação do primeiro dígito
     for (let i = 0; i < 9; i++) {
-        soma += parseInt(cpf.charAt(i)) * (10 - i);
+      soma += parseInt(cpf.charAt(i)) * (10 - i);
     }
-    resto = (soma * 10) % 11;
-    if (resto === 10 || resto === 11) resto = 0;
-    if (resto !== parseInt(cpf.charAt(9))) return false;
+
+    let primeiroDigito = 11 - (soma % 11);
+    if (primeiroDigito >= 10) primeiroDigito = 0;
+    if (primeiroDigito !== parseInt(cpf.charAt(9))) return false;
 
     soma = 0;
-    // Validação do segundo dígito
     for (let i = 0; i < 10; i++) {
-        soma += parseInt(cpf.charAt(i)) * (11 - i);
+      soma += parseInt(cpf.charAt(i)) * (11 - i);
     }
-    resto = (soma * 10) % 11;
-    if (resto === 10 || resto === 11) resto = 0;
-    if (resto !== parseInt(cpf.charAt(10))) return false;
+
+    let segundoDigito = 11 - (soma % 11);
+    if (segundoDigito >= 10) segundoDigito = 0;
+    if (segundoDigito !== parseInt(cpf.charAt(10))) return false;
 
     return true;
-}
+  }
 
+  document.getElementById("formCadastro").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-function cadastrar() {
-    const cpf = document.getElementById('cpfCadastro').value;
-    const senha = document.getElementById('senhaCadastro').value;
-    const confirmaSenha = document.getElementById('confirmaSenhaCadastro').value;
+    // Referências dos inputs e caixas
+    const cpfInput = document.getElementById("cpfCadastro");
+    const senhaInput = document.getElementById("senhaCadastro");
+    const confirmaInput = document.getElementById("confirmaSenhaCadastro");
 
-    // Verifica se o CPF é válido
-    if (!validarCPF(cpf)) {
-        alert("Por favor, insira um CPF válido.");
-        document.getElementById('cpfCadastro').value = ""; // Limpa o campo CPF
-        return;
-    }
-setError(cpf)
-    // Verifica se os campos estão vazios e preenche com uma mensagem padrão
-    if (!senha) {
-        alert("Por favor, preencha o campo Senha.");
-        document.getElementById('senhaCadastro').value = "campo_vazio"; // Ou qualquer valor padrão
-        return;
-    }
-    if (!confirmaSenha) {
-        alert("Por favor, preencha o campo Confirmar Senha.");
-        document.getElementById('confirmaSenhaCadastro').value = "campo_vazio"; // Ou qualquer valor padrão
-        return;
+    const cpfBox = cpfInput.parentElement;
+    const senhaBox = senhaInput.parentElement;
+    const confirmaBox = confirmaInput.parentElement;
+
+    let formValido = true;
+
+    // Resetar erros visuais
+    [cpfBox, senhaBox, confirmaBox].forEach(box => box.classList.remove("error"));
+
+    // Validações
+    if (!validarCPF(cpfInput.value.trim())) {
+      cpfBox.classList.add("error");
+      formValido = false;
     }
 
-    // Verifica se as senhas coincidem
-    if (senha !== confirmaSenha) {
-        alert("As senhas não coincidem!");
-        return;
+    if (senhaInput.value.trim() === "") {
+        senhaBox.classList.add("error");
+        formValido = false;
     }
 
-    // Salva os dados no localStorage
-    localStorage.setItem(cpf, senha);
-    alert("Cadastro realizado com sucesso!");
-    window.location.href = "index.html"; // redireciona para o formulario
-}
-function logar() {
-    const cpf = document.getElementById('cpfLogin').value;
-    const senha = document.getElementById('senhaLogin').value;
-
-    // Verifica se o CPF é válido
-    if (!validarCPF(cpf)) {
-        alert("Por favor, insira um CPF válido.");
-        document.getElementById('cpfLogin').value = ""; // Limpa o campo CPF
-        return;
+    if (confirmaInput.value.trim() === "" || senhaInput.value !== confirmaInput.value) {
+      confirmaBox.classList.add("error");
+      formValido = false;
     }
-
-    // Verifica se os campos estão vazios e preenche com uma mensagem padrão
-    if (!senha) {
-        alert("Por favor, preencha o campo Senha.");
-        document.getElementById('senhaLogin').value = "campo_vazio"; // Ou qualquer valor padrão
-        return;
-    }
-
-    const senhaSalva = localStorage.getItem(cpf);
-
-    if (senhaSalva && senha === senhaSalva) {
-        alert("Login realizado com sucesso!");
-        window.location.href = "index.html"; // redireciona para a página inicial
-    } else {
-        alert("CPF ou senha inválidos.");
-    }
-}
- 
-
+  
+  if (formValido) {
+    // Mostra a mensagem
+    document.getElementById("mensagemEnvio").classList.add("ativo");
+  
+    // Simula um atraso de envio (tipo carregando no servidor)
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1500); // Espera 1,5 segundos antes de redirecionar
+  }
+  });

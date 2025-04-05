@@ -137,10 +137,37 @@ form.container h1 {
 
 }
 
-.span-required{
-    display: none;
-}
 
 .inputs:focus{
     border-color: #f67841;
 }
+
+.span-required {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    text-align: left;
+    padding-left: 45px;
+  }
+  
+  .input-box.error input {
+    border: 1px solid red;
+  }
+  
+  .input-box.error .span-required {
+    display: block;
+  }
+
+  .mensagem-envio {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .mensagem-envio.ativo {
+    display: block;
+  }
+  
+  
