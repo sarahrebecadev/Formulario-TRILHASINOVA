@@ -75,12 +75,13 @@ form.container h1 {
     padding: 13px 50px 13px 20px;
     background: #eee;
     border-radius: 8px;
-    border: none;
+    border: 2px solid #eee;
     outline: none;
     font-size: 16px;
     color: #333;
     font-weight: 500;
-   
+    box-sizing: border-box;
+   transition: .3s;
 }
 /*icones da caixa, como o cadeado e o icone*/
 .input-box input::placeholder {
@@ -88,6 +89,7 @@ form.container h1 {
     font-weight: 400;
     
 }
+
 
 .input-box i {
     position:relative;
@@ -133,4 +135,12 @@ form.container h1 {
     font-size: 14.5px;
     margin: 15px 0;
 
+}
+
+.span-required{
+    display: none;
+}
+
+.inputs:focus{
+    border-color: #f67841;
 }
