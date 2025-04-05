@@ -7,7 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 <body>
-  <form class="form-container" action="#" method="post">
+ <form class="form-container" id="formulario" action="#" method="post">
     <div class="voltar">
       <img src="images/image6.png" alt="Seta" class="Voltar">
       <a href="Pagina.html" class="link-container">Voltar</a>
@@ -65,18 +65,17 @@
       <img src="images/upload.png" alt="Upload">
       <label for="file">Clique aqui para selecionar o arquivo</label>
       <input class="Upload" type="file" id="file" name="file">
-      <span id="file-name"></span>
+      <span id="file-name1"></span>
     </div>
 
     <div>
       <span class="text">Endereço Residencial</span>
     </div>
 
-
     <div class="input-group">
-      <label for="CEP"><h3>CEP:</h3></label>
-      <input type="text" maxlength="9" onkeyup="handleZipCode(event)" placeholder="Digite o seu CEP" required>
-    </div>
+     <label for="CEP"><h3>CEP:</h3></label>
+      <input type="text" id="cep" name="cep" maxlength="9" onkeyup="handleZipCode(event)" oninput="mascaraCEP(this)" placeholder="Digite o seu CEP" required>
+     </div>
 
     <div class="form-Endereço">
       <div class="esquerda">
@@ -107,7 +106,7 @@
       <img src="images/upload.png" alt="Upload">
       <label for="file">Clique aqui para selecionar o arquivo</label>
       <input class="Upload" type="file" id="file2" name="file2">
-      <span id="file-name"></span>
+      <span id="file-name2"></span>
     </div>
 
     <div>
@@ -158,7 +157,8 @@
           </div>
         </label>
       </div>      
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="JS/app.js"></script>
 
     <div class="box_termo">
@@ -176,9 +176,16 @@
       <button class="inscricao" id="mensagem">Fazer inscrição</button>
     </div>
 
+    <div id="carregando" class="carregando" style="display:none;">
+      <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-05-37_512.gif" alt="" />
+      <p>Enviando...</p>
+    </div>
+
   </form>
+  
       <div class="imagem">
         <img src="images/formulario.png" alt="">
       </div>
+
 </body>
 </html>
