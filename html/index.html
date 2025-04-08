@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,44 +21,47 @@
     </div>
 
     <div class="input-group">
-      <label for="nome"><h3>Nome Completo:</h3> </label>
-      <input type="text" id="nome" placeholder="Digite o seu nome completo" required>
+      <label for="nome"><h3>Nome Completo:</h3></label>
+      <input type="text" id="nome" name="nome" placeholder="Digite o seu nome" required>
+      <div id="msgNome"></div>
     </div>
 
     <div class="input-group">
       <label for="data"><h3>Data de Nascimento:</h3></label>
-      <input type="text" id="data" placeholder="dd/mm/aaaa" oninput="formatarData(this)" onblur="document.getElementById('data-validation').textContent = validaData(this.value) ? 'Data válida' : 'Data inválida'">
-      <div><span>Resultado:</span> <span id="data-validation"></span></div>
+      <input type="text" id="data" name="data" placeholder="dd/mm/aaaa" oninput="formatarData(this)" onblur="document.getElementById('msgDATA').textContent = validaData(this.value) ? 'Data válida' : 'Data inválida'">
+      <div id="msgData"></div>
     </div>
 
     <div class="input-group">
-      <label for="cpf"><h3>CPF</h3></label>
-      <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" onkeyup="document.getElementById('cpf-validation').innerHTML = validaCPF(this.value)" oninput="aplicarMascaraCPF(this)" maxlength="14" required>
-      <div><b>Resultado</b> <span id="cpf-validation"></span></div>
+      <label for="cpf"><h3>CPF:</h3></label>
+      <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" onkeyup="document.getElementById('msgCPF').innerText = validaCPF(this.value)" oninput="aplicarMascaraCPF(this)" maxlength="14" required>
+      <div id="msgCpf"></div>
     </div>
 
-    <div class="sexo-section">
-      <label for="sexo"> <h3>Sexo</h3></label>
-      <select id="sexo" name="sexo">
+  <div class="sexo-section">
+     <label for="sexo"><h3>Sexo:</h3></label>
+     <select id="sexo" name="sexo">
         <option value="">Selecione uma opção</option>
         <option value="masculino">Masculino</option>
         <option value="feminino">Feminino</option>
         <option value="outro">Outro</option>
         <option value="nao_informar">Prefiro não informar</option>
-      </select>
-    </div>
+     </select>
+    <div id="msgSexo"></div>
+  </div>
 
     <div class="input-group">
-      <label for="email"><h3>E-mail</h3></label>
-      <input type="text" id="email" name="email" onblur="validacaoEmail(this)"  maxlength="60" size='65' placeholder="Digite o seu email" required>
-      <div id="msgemail"></div>
+        <label for="email"><h3>E-mail:</h3></label>
+        <input type="email" id="email" name="email" placeholder="Digite o seu email" maxlength="60" required>
+        <div id="msgEmail"></div>
     </div>
     
     <div class="input-group">
-      <label for="telefone"><h3>Telefone</h3></label>
-      <input type="tel" id="telefone" maxlength="15" onkeyup="aplicarMascaraTelefone(this)" placeholder="Digite o seu telefone" required>
+      <label for="telefone"><h3>Telefone:</h3></label>
+      <input type="tel" id="telefone" name="telefone" maxlength="15" onkeyup="aplicarMascaraTelefone(this)" placeholder="Digite o seu telefone" required>
+      <div id="msgTelefone"></div>
     </div>
-    
+   
       <p>Documento de identidade</p>
 
     <div class="form-container__Upload">
@@ -73,32 +76,33 @@
     </div>
 
     <div class="input-group">
-     <label for="CEP"><h3>CEP:</h3></label>
-      <input type="text" id="cep" name="cep" maxlength="9" onkeyup="handleZipCode(event)" oninput="mascaraCEP(this)" placeholder="Digite o seu CEP" required>
-     </div>
-
-    <div class="form-Endereço">
-      <div class="esquerda">
-        <div class="form-group rua">
-          <label for="Rua"><h3>Rua:</h3></label>
-          <input type="text" id="Rua" placeholder="">
-        </div>
-        <div class="form-group cidade">
-          <label for="Cid"><h3>Cidade:</h3></label>
-          <input type="text" id="Cid" placeholder="">
-        </div>
-      </div>
-      <div class="direita">
-        <div class="form-group numero">
-          <label for="number"><h3>Número:</h3></label>
-          <input type="text" id="number" placeholder="">
-        </div>
-        <div class="form-group estado">
-          <label for="Est"><h3>Estado:</h3></label>
-          <input type="text" id="Est" placeholder="">
-        </div>
-      </div>
+        <label for="cep"><h3>CEP:</h3></label>
+        <input type="text" id="Cep" name="cep" maxlength="9" onkeyup="handleZipCode(event)" oninput="mascaraCEP(this)" placeholder="Digite o seu CEP" required>
+        <div id="msgCep"></div>
     </div>
+
+ <div class="form-Endereço">
+  <div class="esquerda">
+    <div class="form-group rua">
+      <label for="Rua"><h3>Rua:</h3></label>
+      <input type="text" id="Rua" name="rua" placeholder="">
+    </div>
+    <div class="form-group cidade">
+      <label for="Cid"><h3>Cidade:</h3></label>
+      <input type="text" id="Cid" name="cidade" placeholder="">
+    </div>
+  </div>
+  <div class="direita">
+    <div class="form-group numero">
+      <label for="number"><h3>Número:</h3></label>
+      <input type="text" id="number" name="numero" placeholder="">
+    </div>
+    <div class="form-group estado">
+      <label for="Est"><h3>Estado:</h3></label>
+      <input type="text" id="Est" name="estado" placeholder="">
+    </div>
+  </div>
+</div>
 
       <p>Comprovante de residência</p>
 
@@ -157,35 +161,33 @@
           </div>
         </label>
       </div>      
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="JS/app.js"></script>
-
+   
     <div class="box_termo">
-        <input class="input_box" type="checkbox" value="termo" />
-        <p class="texto_box">Declaro que li e concordo com os <span class="form-cor">Termos  e Condições</span> e <span class="form-cor">a Política de Privacidade.</span></p>
+      <input class="input_box" type="checkbox" id="termo1" value="termo" required />
+      <p class="texto_box">Declaro que li e concordo com os <span class="form-cor">Termos e Condições</span> e <span class="form-cor">a Política de Privacidade</span>.</p>
     </div>
 
     <div class="box_termo">
-      <input class="input_box" name="checkbox" type="checkbox" value="termo" />
+      <input class="input_box" type="checkbox" id="termo2" value="lgpd" required />
       <p class="texto_box">Eu concordo com os termos de uso e política de privacidade relacionados à LGPD.</p>
     </div>
 
     <div class="botao-container">
-      <button class="Cancelar">Cancelar</button>
-      <button class="inscricao" id="mensagem">Fazer inscrição</button>
+      <button class="Cancelar" type="reset">Cancelar</button>
+      <button class="inscricao" id="mensagem" type="submit">Fazer inscrição</button>
     </div>
 
     <div id="carregando" class="carregando" style="display:none;">
-      <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-05-37_512.gif" alt="" />
+      <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-05-37_512.gif" alt="Carregando">
       <p>Enviando...</p>
     </div>
 
-  </form>
-  
-      <div class="imagem">
-        <img src="images/formulario.png" alt="">
-      </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="JS/app.js"></script>
+   
+   </form>
+ </div>
+     <div class="imagem">
+     <img src="images/formulario.png" alt="">
 </body>
 </html>
