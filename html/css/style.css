@@ -54,6 +54,31 @@ body {
     object-fit:cover;
 }
 
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Muda a direção do layout para coluna em telas pequenas */
+    }
+
+    .imagem {
+        display: none; /* Esconde a imagem em dispositivos móveis */
+    }
+
+    .form-container {
+        width: 100%; /* O formulário ocupa toda a largura */
+        max-width: none; /* Remove qualquer limite de largura */
+        margin-top: 20px; /* Adiciona um pequeno espaço superior */
+    }
+
+    /* Modificação das caixas de seleção para coluna em telas pequenas */
+   form .container {
+        display: flex;
+        flex-direction: column;  
+        gap: 15px; /*  pequeno espaço entre as caixas de seleção */
+        align-items: center;
+    }
+}
+
 .Voltar {
     width: 24px;
     height: 24px;
