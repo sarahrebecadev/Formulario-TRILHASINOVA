@@ -161,7 +161,7 @@ form.container h1 {
 
   .mensagem-envio {
     display: none;
-    color: green;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     margin-top: 10px;
     text-align: center;
