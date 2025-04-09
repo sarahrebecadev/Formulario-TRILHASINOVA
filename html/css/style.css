@@ -60,7 +60,7 @@ body {
         flex-direction: column; /* Muda a direção do layout para coluna em telas pequenas */
     }
 
-    .imagem {
+    .imagem img {
         display: none; /* Esconde a imagem em dispositivos móveis */
     }
 
