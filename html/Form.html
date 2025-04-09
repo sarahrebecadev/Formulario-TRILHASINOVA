@@ -1,0 +1,193 @@
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Formulario de Inscrição</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+ <form class="form-container" id="formulario" action="#" method="post">
+    <div class="voltar">
+      <img src="images/image6.png" alt="Seta" class="Voltar">
+      <a href="index.html" class="link-container">Voltar</a>
+    </div>
+    
+    <h1>Formulário de Inscrição</h1>
+    <p>Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas</p>
+    
+    <div>
+      <span class="text">Informações do Participante</span>
+    </div>
+
+    <div class="input-group">
+      <label for="nome"><h3>Nome Completo:</h3></label>
+      <input type="text" id="nome" name="nome" placeholder="Digite o seu nome" required>
+      <div id="msgNome"></div>
+    </div>
+
+    <div class="input-group">
+      <label for="data"><h3>Data de Nascimento:</h3></label>
+      <input type="text" id="data" name="data" placeholder="dd/mm/aaaa" oninput="formatarData(this)" onblur="document.getElementById('msgDATA').textContent = validaData(this.value) ? 'Data válida' : 'Data inválida'">
+      <div id="msgData"></div>
+    </div>
+
+    <div class="input-group">
+      <label for="cpf"><h3>CPF:</h3></label>
+      <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" onkeyup="document.getElementById('msgCPF').innerText = validaCPF(this.value)" oninput="aplicarMascaraCPF(this)" maxlength="14" required>
+      <div id="msgCpf"></div>
+    </div>
+
+  <div class="sexo-section">
+     <label for="sexo"><h3>Sexo:</h3></label>
+     <select id="sexo" name="sexo">
+        <option value="">Selecione uma opção</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+        <option value="nao_informar">Prefiro não informar</option>
+     </select>
+    <div id="msgSexo"></div>
+  </div>
+
+    <div class="input-group">
+        <label for="email"><h3>E-mail:</h3></label>
+        <input type="email" id="email" name="email" placeholder="Digite o seu email" maxlength="60" required>
+        <div id="msgEmail"></div>
+    </div>
+    
+    <div class="input-group">
+      <label for="telefone"><h3>Telefone:</h3></label>
+      <input type="tel" id="telefone" name="telefone" maxlength="15" onkeyup="aplicarMascaraTelefone(this)" placeholder="Digite o seu telefone" required>
+      <div id="msgTelefone"></div>
+    </div>
+   
+      <p>Documento de identidade</p>
+
+    <div class="form-container__Upload">
+      <img src="images/upload.png" alt="Upload">
+      <label for="file">Clique aqui para selecionar o arquivo</label>
+      <input class="Upload" type="file" id="file" name="file">
+      <span id="file-name1"></span>
+    </div>
+
+    <div>
+      <span class="text">Endereço Residencial</span>
+    </div>
+
+    <div class="input-group">
+        <label for="cep"><h3>CEP:</h3></label>
+        <input type="text" id="Cep" name="cep" maxlength="9" onkeyup="handleZipCode(event)" oninput="mascaraCEP(this)" placeholder="Digite o seu CEP" required>
+        <div id="msgCep"></div>
+    </div>
+
+ <div class="form-Endereço">
+  <div class="esquerda">
+    <div class="form-group rua">
+      <label for="Rua"><h3>Rua:</h3></label>
+      <input type="text" id="Rua" name="rua" placeholder="">
+    </div>
+    <div class="form-group cidade">
+      <label for="Cid"><h3>Cidade:</h3></label>
+      <input type="text" id="Cid" name="cidade" placeholder="">
+    </div>
+  </div>
+  <div class="direita">
+    <div class="form-group numero">
+      <label for="number"><h3>Número:</h3></label>
+      <input type="text" id="number" name="numero" placeholder="">
+    </div>
+    <div class="form-group estado">
+      <label for="Est"><h3>Estado:</h3></label>
+      <input type="text" id="Est" name="estado" placeholder="">
+    </div>
+  </div>
+</div>
+
+      <p>Comprovante de residência</p>
+
+    <div class="form-container__Upload">
+      <img src="images/upload.png" alt="Upload">
+      <label for="file">Clique aqui para selecionar o arquivo</label>
+      <input class="Upload" type="file" id="file2" name="file2">
+      <span id="file-name2"></span>
+    </div>
+
+    <div>
+      <span class="text">Trilas de Aprendizagem</span>
+    </div>
+
+      <p>Selecione apenas uma trilha</p>
+    
+      <div class="container">
+        <label class="custom-checkbox">
+          <input type="checkbox" onclick="selecionarCheckbox(this)">
+          <span class="checkmark"></span>
+          <div class="content">
+            <img src="images/imagens front.png">
+            <span class="texto">Programação Front-end</span>
+          </div>
+        </label>
+        <label class="custom-checkbox">
+          <input type="checkbox" onclick="selecionarCheckbox(this)"> 
+          <span class="checkmark"></span> 
+          <div class="content">
+            <img src="images/imagens back.png">
+            <span class="texto">Programação Back-end</span>
+          </div>
+        </label>
+        <label class="custom-checkbox">
+          <input type="checkbox" onclick="selecionarCheckbox(this)">
+          <span class="checkmark"></span> 
+          <div class="content">
+            <img src="images/imagens jogos.png">
+            <span class="texto">Programação de Jogos</span>
+          </div>
+        </label>
+        <label class="custom-checkbox">
+          <input type="checkbox" onclick="selecionarCheckbox(this)">
+          <span class="checkmark"></span>
+          <div class="content">
+            <img src="images/imagens design.png">
+            <span class="texto">Design e Experiência</span>
+          </div>
+        </label>
+        <label class="custom-checkbox">
+          <input type="checkbox" onclick="selecionarCheckbox(this)">
+          <span class="checkmark"></span> 
+          <div class="content">
+            <img src="images/imagens dados.png">
+            <span class="texto">Ciência de Dados</span>
+          </div>
+        </label>
+      </div>      
+   
+    <div class="box_termo">
+      <input class="input_box" type="checkbox" id="termo1" value="termo" required />
+      <p class="texto_box">Declaro que li e concordo com os <span class="form-cor">Termos e Condições</span> e <span class="form-cor">a Política de Privacidade</span>.</p>
+    </div>
+
+    <div class="box_termo">
+      <input class="input_box" type="checkbox" id="termo2" value="lgpd" required />
+      <p class="texto_box">Eu concordo com os termos de uso e política de privacidade relacionados à LGPD.</p>
+    </div>
+
+    <div class="botao-container">
+      <button class="Cancelar" type="reset">Cancelar</button>
+      <button class="inscricao" id="mensagem" type="submit">Fazer inscrição</button>
+    </div>
+
+    <div id="carregando" class="carregando" style="display:none;">
+      <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-05-37_512.gif" alt="Carregando">
+      <p>Enviando...</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="JS/app.js"></script>
+   
+   </form>
+ </div>
+     <div class="imagem">
+     <img src="images/formulario.png" alt="">
+</body>
+</html>

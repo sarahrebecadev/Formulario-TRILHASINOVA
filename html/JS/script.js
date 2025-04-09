@@ -70,7 +70,7 @@ function somenteNumeros(e) {
   
     // Simula um atraso de envio (tipo carregando no servidor)
     setTimeout(() => {
-      window.location.href = "index.html";
+      window.location.href = "Form.html";
     }, 1500); // Espera 1,5 segundos antes de redirecionar
   }
   });
