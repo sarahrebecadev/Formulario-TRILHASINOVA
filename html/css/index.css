@@ -224,24 +224,6 @@ form.container h1 {
         width: 85%;
     }
 
-    .container {
-        text-align: center;
-        margin: 0 auto;
-        padding: 10px;
-      }
-    
-      h1, h2, p {
-        font-size: 1.2rem; /* ou use valores como 1.2rem, etc. */
-      }
-    
-      .btn, button, a {
-        font-size: 90%;
-        padding: 8px 16px;
-        display: inline-block;
-        width: 100%;
-        box-sizing: border-box;
-      }
-}
 
 
 
