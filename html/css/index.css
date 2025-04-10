@@ -16,8 +16,6 @@ body {
     min-height: 100vh;
     margin-inline-end: 90px;
     background:image-set(url(../images/image.png));
-    width: 90%;
-    height: 100%;   
     background-size: cover;
 }
 /*cabeçalho de boas vindas*/
