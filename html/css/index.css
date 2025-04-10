@@ -190,40 +190,52 @@ form.container h1 {
 
   @media (max-width: 768px) {
     body {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-inline-end: 0;
+        margin: 0;
         padding: 20px;
+        height: 100vh;
+        box-sizing: border-box;
     }
 
     .boasvindas {
+        position: relative;
         top: 0;
-        order: -1; /* Garante que fique em cima */
+        order: -1; /* Fica no topo */
         text-align: center;
         padding: 20px;
+        width: 100%;
     }
 
     .form-box {
-       
+        width: 100%;
         max-width: 360px;
         margin-top: 20px;
+        box-sizing: border-box;
     }
 
-    .download-link, .cadastre-se {
+    .download-link,
+    .cadastre-se {
         width: 100%;
         max-width: 300px;
         margin: 10px auto;
     }
 
-    .input-box input {
-        width: 85%;
-    }
-
+    .input-box input,
     .botao {
-        width: 85%;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
     }
-  }
 
-
-
+    .image {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin: 20px auto;
+        display: block;
+    }
+}
