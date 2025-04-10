@@ -207,6 +207,7 @@ form.container h1 {
     .texto img{
         height: 2.7rem;
         width: auto;
+        margin-top: 20px;
     }
 
     .form-box {
