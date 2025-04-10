@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Formulario de Inscrição</title>
   <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 <body>
@@ -64,13 +65,14 @@
    
       <p>Documento de identidade</p>
 
-    <div class="form-container__Upload">
-      <img src="images/upload.png" alt="Upload">
-      <label for="file">Clique aqui para selecionar o arquivo</label>
-      <input class="Upload" type="file" id="file" name="file">
+     <div class="form-container__Upload">
+      <img src="imagem.png" alt="Upload">
+      <label for="file1">Clique aqui para selecionar o arquivo</label>
+      <input class="Upload" type="file" id="file1" name="documento_identidade">
       <span id="file-name1"></span>
-    </div>
-
+      <div id="msgUpload1"></div>
+     </div>
+   
     <div>
       <span class="text">Endereço Residencial</span>
     </div>
@@ -81,36 +83,49 @@
         <div id="msgCep"></div>
     </div>
 
- <div class="form-Endereço">
-  <div class="esquerda">
-    <div class="form-group rua">
-      <label for="Rua"><h3>Rua:</h3></label>
-      <input type="text" id="Rua" name="rua" placeholder="">
+  <div class="form-Endereço">
+      <div class="esquerda">
+        <div class="form-group rua">
+          <label for="Rua">
+            <h3>Rua:</h3>
+          </label>
+          <input type="text" id="Rua" name="rua" placeholder="">
+          <div id="msgRua"></div>
+        </div>
+        <div class="form-group cidade">
+          <label for="Cid">
+            <h3>Cidade:</h3>
+          </label>
+          <input type="text" id="Cid" name="cidade" placeholder="">
+          <div id="msgCidade"></div>
+        </div>
+      </div>
+      <div class="direita">
+        <div class="form-group numero">
+          <label for="number">
+            <h3>Número:</h3>
+          </label>
+          <input type="text" id="number" name="numero" placeholder="">
+          <div id="msgNumero"></div>
+        </div>
+        <div class="form-group estado">
+          <label for="Est">
+            <h3>Estado:</h3>
+          </label>
+          <input type="text" id="Est" name="estado" placeholder="">
+          <div id="msgEstado"></div>
+        </div>
+      </div>
     </div>
-    <div class="form-group cidade">
-      <label for="Cid"><h3>Cidade:</h3></label>
-      <input type="text" id="Cid" name="cidade" placeholder="">
-    </div>
-  </div>
-  <div class="direita">
-    <div class="form-group numero">
-      <label for="number"><h3>Número:</h3></label>
-      <input type="text" id="number" name="numero" placeholder="">
-    </div>
-    <div class="form-group estado">
-      <label for="Est"><h3>Estado:</h3></label>
-      <input type="text" id="Est" name="estado" placeholder="">
-    </div>
-  </div>
-</div>
-
+   
       <p>Comprovante de residência</p>
 
     <div class="form-container__Upload">
-      <img src="images/upload.png" alt="Upload">
-      <label for="file">Clique aqui para selecionar o arquivo</label>
-      <input class="Upload" type="file" id="file2" name="file2">
+      <img src="imagem.png" alt="Upload">
+      <label for="file2">Clique aqui para selecionar o arquivo</label>
+      <input class="Upload" type="file" id="file2" name="comprovante_residencia">
       <span id="file-name2"></span>
+      <div id="msgUpload2"></div>
     </div>
 
     <div>
@@ -120,66 +135,74 @@
       <p>Selecione apenas uma trilha</p>
     
       <div class="container">
-        <label class="custom-checkbox">
-          <input type="checkbox" onclick="selecionarCheckbox(this)">
-          <span class="checkmark"></span>
-          <div class="content">
-            <img src="images/imagens front.png">
-            <span class="texto">Programação Front-end</span>
-          </div>
-        </label>
-        <label class="custom-checkbox">
-          <input type="checkbox" onclick="selecionarCheckbox(this)"> 
-          <span class="checkmark"></span> 
-          <div class="content">
-            <img src="images/imagens back.png">
-            <span class="texto">Programação Back-end</span>
-          </div>
-        </label>
-        <label class="custom-checkbox">
-          <input type="checkbox" onclick="selecionarCheckbox(this)">
-          <span class="checkmark"></span> 
-          <div class="content">
-            <img src="images/imagens jogos.png">
-            <span class="texto">Programação de Jogos</span>
-          </div>
-        </label>
-        <label class="custom-checkbox">
-          <input type="checkbox" onclick="selecionarCheckbox(this)">
-          <span class="checkmark"></span>
-          <div class="content">
-            <img src="images/imagens design.png">
-            <span class="texto">Design e Experiência</span>
-          </div>
-        </label>
-        <label class="custom-checkbox">
-          <input type="checkbox" onclick="selecionarCheckbox(this)">
-          <span class="checkmark"></span> 
-          <div class="content">
-            <img src="images/imagens dados.png">
-            <span class="texto">Ciência de Dados</span>
-          </div>
-        </label>
-      </div>      
+      <label class="custom-checkbox">
+        <input type="checkbox" name="curso" onclick="selecionarCheckbox(this)">
+        <span class="checkmark"></span>
+        <div class="content">
+          <img src="imagens front.png">
+          <span class="texto">Programação Front-end</span>
+        </div>
+        <div id="msgCurso1"></div>
+      </label>
+      <label class="custom-checkbox">
+        <input type="checkbox" name="curso" onclick="selecionarCheckbox(this)">
+        <span class="checkmark"></span>
+        <div class="content">
+          <img src="imagens back.png">
+          <span class="texto">Programação Back-end</span>
+        </div>
+        <div id="msgCurso2"></div>
+      </label>
+      <label class="custom-checkbox">
+        <input type="checkbox" name="curso" onclick="selecionarCheckbox(this)">
+        <span class="checkmark"></span>
+        <div class="content">
+          <img src="imagens jogos.png">
+          <span class="texto">Programação de Jogos</span>
+        </div>
+        <div id="msgCurso3"></div>
+      </label>
+
+      <label class="custom-checkbox">
+        <input type="checkbox" name="curso" onclick="selecionarCheckbox(this)">
+        <span class="checkmark"></span>
+        <div class="content">
+          <img src="imagens design.png">
+          <span class="texto">Design e Experiência</span>
+        </div>
+        <div id="msgCurso4"></div>
+      </label>
+      <label class="custom-checkbox">
+        <input type="checkbox" name="curso" onclick="selecionarCheckbox(this)">
+        <span class="checkmark"></span>
+        <div class="content">
+          <img src="imagens dados.png">
+          <span class="texto">Ciência de Dados</span>
+        </div>
+        <div id="msgCurso5"></div>
+      </label>
+    </div> 
    
     <div class="box_termo">
       <input class="input_box" type="checkbox" id="termo1" value="termo" required />
       <p class="texto_box">Declaro que li e concordo com os <span class="form-cor">Termos e Condições</span> e <span class="form-cor">a Política de Privacidade</span>.</p>
     </div>
-
+    <div id="msgTermo1"></div> 
+    
     <div class="box_termo">
       <input class="input_box" type="checkbox" id="termo2" value="lgpd" required />
       <p class="texto_box">Eu concordo com os termos de uso e política de privacidade relacionados à LGPD.</p>
     </div>
+    <div id="msgTermo2"></div>
 
     <div class="botao-container">
       <button class="Cancelar" type="reset">Cancelar</button>
       <button class="inscricao" id="mensagem" type="submit">Fazer inscrição</button>
     </div>
-
+   
     <div id="carregando" class="carregando" style="display:none;">
       <img src="https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-05-37_512.gif" alt="Carregando">
-      <p>Enviando...</p>
+      <p>Enviando seus dados</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
