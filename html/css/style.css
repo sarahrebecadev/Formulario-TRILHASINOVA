@@ -1,84 +1,90 @@
+/* Importando a fonte Poppins do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Estilos globais para todos os elementos */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-
+    font-family: 'Poppins', sans-serif; /* Definindo a fonte Poppins para todos os elementos */
 }
 
+/* Estilos gerais para o body e html */
 body, html {
     display: flex;
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Impede que o conteúdo saia da tela */
 }
 
+/* Estilo do corpo da página (layout flexível) */
 body {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* O layout é horizontal por padrão */
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Cor de fundo do corpo */
 }
 
+/* Estilos para o formulário */
 .form-container {
-    flex: 1;
-    background-color: #fff;
+    flex: 1; /* O formulário ocupa toda a largura disponível */
+    background-color: #fff; /* Cor de fundo branca */
     padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do formulário */
+    max-width: 800px; /* Largura máxima do formulário */
     width: 100%;
-    text-align: left;
-    font-size: 16x;
-    font-family: 'Poppins';font-size: 10px;
-    overflow-y: auto;
+    text-align: left; /* Alinha o texto à esquerda */
+    font-size: 12px; /* Tamanho da fonte */
+    overflow-y: auto; /* Permite rolagem vertical */
     box-sizing: border-box;
 }
 
+/* Estilos para a seção de imagem (flexível) */
 .imagem {
-    flex: 1;
+    flex: 1; /* A imagem ocupa o restante da largura disponível */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: #f0f0f0;
-    overflow: hidden;
+    background-color: #f0f0f0; /* Cor de fundo */
+    overflow: hidden; /* Impede que a imagem ultrapasse o limite */
 }
 
+/* Estilos para a imagem dentro da seção */
 .imagem img {
     width: 800px;
     height: 750px;  
-    object-fit:cover;
+    object-fit: cover; /* A imagem cobre a área sem distorção */
 }
 
-/* Responsividade para dispositivos móveis */
+/* Estilos responsivos para telas menores (máximo 768px de largura) */
 @media (max-width: 768px) {
     body {
-        flex-direction: column; /* Muda a direção do layout para coluna em telas pequenas */
+        flex-direction: column; /* Layout vertical para dispositivos menores */
     }
 
-    .imagem img {
+    .imagem {
         display: none; /* Esconde a imagem em dispositivos móveis */
     }
 
     .form-container {
         width: 100%; /* O formulário ocupa toda a largura */
         max-width: none; /* Remove qualquer limite de largura */
-        margin-top: 20px; /* Adiciona um pequeno espaço superior */
+        margin-top: 20px; /* Espaçamento superior */
     }
 
-    /* Modificação das caixas de seleção para coluna em telas pequenas */
-   form .container {
+    /* Estilo para o container de campos de formulário (em coluna) */
+    form .container {
         display: flex;
         flex-direction: column;  
-        gap: 15px; /*  pequeno espaço entre as caixas de seleção */
+        gap: 15px; /* Espaçamento entre os elementos */
         align-items: center;
     }
 }
 
+/* Estilo do ícone de "Voltar" */
 .Voltar {
     width: 24px;
     height: 24px;
@@ -86,35 +92,40 @@ body {
     vertical-align: middle;
 }
 
+/* Estilo da classe ".voltar" */
 .voltar {
     display: flex;
-    align-items: center;
+    align-items: center; /* Alinha o conteúdo centralizado verticalmente */
 }
-
+    
+/* Estilo do link para navegação */
 .link-container {
     display: flex;
     color: #8F8881;
-    text-decoration: none;
+    text-decoration: none; /* Remove o sublinhado */
     font-size: 15px;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
 }
 
+/* Estilos para o título do formulário */
 .form-container h1 {
     font-size: 23px;
     margin-bottom: 15px;
     text-align: left;
 }
 
+/* Estilos para os parágrafos dentro do formulário */
 .form-container p {
     margin-bottom: 10px;
     text-align: left;
-    opacity: 0.5;
+    opacity: 0.5; /* Opacidade reduzida para um estilo mais sutil */
     font-size: 16px;
     margin-top: 1px;
 }
 
+/* Estilo para os campos de texto */
 .text {
     font-weight: bold;
     font-size: 19px;
@@ -122,6 +133,7 @@ body {
     margin-top: 20px;
 }
 
+/* Estilos para a seção de seleção de gênero (ou sexo) */
 .sexo-section label {
     font-weight: bold;
     display: block;
@@ -139,12 +151,14 @@ body {
     cursor: pointer;
 }
 
+/* Estilos para o foco no campo de seleção (ex: borda colorida) */
 .sexo-section select:focus {
     outline: none;
     border-color: #f67841;
     border-width: 1.5px;
 }
 
+/* Estilos para os campos de entrada dentro do formulário */
 .form-container label {
     display: block;
     margin-bottom: 3px;
@@ -152,6 +166,7 @@ body {
     opacity: 0.7;
 }
 
+/* Estilos para os campos de input (textos, números, etc.) */
 .form-container input[type="file"],
 .form-container input[type="text"],
 .form-container input[type="number"],
@@ -166,6 +181,7 @@ body {
     font-size: 15px;
 }
 
+/* Estilos para o foco nos campos de input */
 .input-container input[type="number"]:focus,
 .form-container input[type="text"]:focus,
 .form-container input[type="email"]:focus,
@@ -176,6 +192,7 @@ body {
     border-width: 1.5px;
 }
 
+/* Estilo para o botão de upload de arquivos */
 .form-container__Upload {
     position: relative;
     border: 2px dashed darkgrey;
@@ -189,8 +206,9 @@ body {
     width: 100%;
 }
 
+/* Estilo invisível para o input de upload */
 .Upload {
-    opacity: 0;
+    opacity: 0; /* O input é invisível, mas ainda interage */
     position: absolute;
     inset: 0;
     width: 100%;
@@ -198,9 +216,10 @@ body {
     cursor: pointer;
 }
 
+/* Estilos para os ícones dentro do upload */
 .form-container__Upload label {
     color: #555;
-    pointer-events: none;
+    pointer-events: none; /* Desabilita interações com o label */
 }
 
 .form-container__Upload img {
@@ -213,27 +232,32 @@ body {
     color: #8F8881;
 }
 
+/* Estilos para os campos de endereço (divididos em colunas) */
 .form-Endereço {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
 }
 
+/* Estilos para as colunas de esquerda e direita */
 .esquerda, .direita {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/* Estilos para os grupos de campos dentro do formulário */
 .form-group {
     display: flex;
     flex-direction: column;
 }
 
+/* Estilos para a coluna direita (ocupando 100% de largura) */
 .direita {
     width: 100%;
 }
 
+/* Estilos para o container geral (2 colunas) */
 .container {
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
@@ -242,6 +266,7 @@ body {
     border-radius: 8px;
 }
 
+/* Estilo para o checkbox customizado */
 .custom-checkbox {
     display: flex;
     flex-direction: column; 
@@ -259,10 +284,12 @@ body {
     position: relative;
 }
 
+/* Esconde a checkbox padrão */
 .custom-checkbox input[type="checkbox"] {
     display: none;
 }
 
+/* Estilo para o ícone de "checkmark" dentro do checkbox */
 .custom-checkbox .checkmark {
     width: 20px; 
     height: 20px;
@@ -276,6 +303,7 @@ body {
     position: relative;
 }
 
+/* Estilos para o conteúdo do checkbox */
 .custom-checkbox .content {
     display: flex;
     flex-direction: column;
@@ -283,11 +311,13 @@ body {
     gap: 10px;
 }
 
+/* Estilo para a imagem dentro do checkbox */
 .custom-checkbox img {
-    max-width: 30%;
+    max-width: 25%;
     height: auto;
 }
 
+/* Estilos para o texto dentro do checkbox */
 .custom-checkbox .texto {
     font-size: 16px;
     color: #333;
@@ -295,11 +325,14 @@ body {
     width: 100%;
     white-space: nowrap;
 }
+
+/* Estilo para o checkbox selecionado */
 .custom-checkbox input[type="checkbox"]:checked + .checkmark {
     background-color: #f3541c;
     border-color: #f3541c;
 }
 
+/* Estilo do "check" dentro do checkbox selecionado */
 .custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
     content: '✔';
     position: absolute;
@@ -310,41 +343,56 @@ body {
     transition: left 0.3s ease; 
 }
 
+/* Efeito hover no checkbox */
 .custom-checkbox:hover {
     border-color: #f3541c;
 }
 
+/* Estilo para o texto dentro da caixa de termos */
 .custom-checkbox span {
     font-size: 15px;
     color: #333;
     text-align: center;
 }
 
+/* Estilos para a caixa de termos */
 .box_termo {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 14px;
     color: #333;
+    margin-bottom: 10px; 
 }
 
+/* Estilo para o checkbox dentro da caixa de termos */
 .input_box {
     width: 20px;
     height: 20px;
     margin-right: 10px;
 }
 
-.text_box {
-    text-align: center;
-    font-size: 20px;
+/* Estilos para o texto da caixa de termos */
+.texto_box {
+    text-align: left;
+    font-size: 14px;
     color: #333;
     margin: 0;
+    line-height: 1.5; /* Espaçamento entre as linhas */
 }
 
+/* Estilo para o texto colorido dentro do formulário */
 .form-cor {
     color: #e43a12;
 }
 
+#msgTermo1, #msgTermo2 {
+    margin-top: 2px; 
+    display: block; 
+    margin-left: 30px;
+}
+
+/* Estilos para os botões de ação (inscrição e cancelar) */
 .botao-container {
     display: flex;
     justify-content: flex-end;
@@ -370,4 +418,31 @@ body {
     padding: 14px 35px;
     font-size: 14px;
     margin-right: 0;
+}
+
+/* Estilos para a tela de carregamento */
+.carregando {
+    position: fixed; /* Fixa o elemento na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 9999; /* Fica sobre os outros elementos */
+    display: none; 
+    flex-direction: column; 
+}
+
+.carregando img {
+    width: 50px; 
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.carregando p {
+    color: white;
+    font-size: 14px;
 }
