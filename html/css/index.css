@@ -194,25 +194,26 @@ form.container h1 {
         justify-content: center;
         align-items: center;
         margin-inline-end: -1;
-        padding: 20px;
+        padding: 30px;
     }
 
     .boasvindas {
         top: 0;
         order: -1; /* Garante que fique em cima */
         text-align: center;
-        font-size: 12px;
+        font-size: 15px;
         padding: 20px;
     }
     .texto img{
-        height: 2rem;
+        height: 2.7rem;
         width: auto;
     }
 
     .form-box {
        
-        max-width: 320px;
-        margin-top: 15px;
+        max-width: 300px;
+        margin-top: 20px;
+    
     }
 
     .download-link, .cadastre-se {
