@@ -169,5 +169,37 @@ form.container h1 {
   .mensagem-envio.ativo {
     display: block;
   }
+
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro e semi-transparente */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loading-content {
+    text-align: center;
+  }
+  
+  .loading-content img {
+    width: 300px;
+    height: 244px;
+    
+  }
+  
+  .loading-content p {
+    margin-top: 12px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+ 
   
   

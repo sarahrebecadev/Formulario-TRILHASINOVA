@@ -49,28 +49,28 @@ function somenteNumeros(e) {
     [cpfBox, senhaBox, confirmaBox].forEach(box => box.classList.remove("error"));
 
     // Validações
-    if (!validarCPF(cpfInput.value.trim())) {
-      cpfBox.classList.add("error");
-      formValido = false;
-    }
+  if (!validarCPF(cpfInput.value.trim())) {
+    cpfBox.classList.add("error");
+    formValido = false;
+  }
 
-    if (senhaInput.value.trim() === "") {
-        senhaBox.classList.add("error");
-        formValido = false;
-    }
+  if (senhaInput.value.trim() === "") {
+    senhaBox.classList.add("error");
+    formValido = false;
+  }
 
-    if (confirmaInput.value.trim() === "" || senhaInput.value !== confirmaInput.value) {
-      confirmaBox.classList.add("error");
-      formValido = false;
-    }
-  
+  if (confirmaInput.value.trim() === "" || senhaInput.value !== confirmaInput.value) {
+    confirmaBox.classList.add("error");
+    formValido = false;
+  }
+
   if (formValido) {
-    // Mostra a mensagem
-    document.getElementById("mensagemEnvio").classList.add("ativo");
+    const loading = document.getElementById("loading-screen");
+    loading.style.display = "flex";
   
-    // Simula um atraso de envio (tipo carregando no servidor)
+    // Simula envio e redireciona
     setTimeout(() => {
       window.location.href = "Form.html";
-    }, 1500); // Espera 1,5 segundos antes de redirecionar
+    }, 1500);
   }
-  });
+})

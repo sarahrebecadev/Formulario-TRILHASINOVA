@@ -307,7 +307,7 @@ function validarFormulario(event) {
 
   setTimeout(() => {
     document.getElementById('carregando').style.display = 'none';
-    window.location.href = "Pagina.html"; 
+    window.location.href = "index.html"; 
   }, 1000); // Delay de 1 segundo
 }
 

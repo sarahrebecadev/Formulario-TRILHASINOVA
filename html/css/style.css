@@ -60,7 +60,7 @@ body {
         flex-direction: column; /* Muda a direção do layout para coluna em telas pequenas */
     }
 
-    .imagem img {
+    .imagem {
         display: none; /* Esconde a imagem em dispositivos móveis */
     }
 
@@ -371,3 +371,4 @@ body {
     font-size: 14px;
     margin-right: 0;
 }
+  
