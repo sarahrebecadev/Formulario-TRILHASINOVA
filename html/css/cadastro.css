@@ -159,16 +159,6 @@ form.container h1 {
     display: block;
   }
 
-  .mensagem-envio {
-    display: none;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
-  }
-  .mensagem-envio.ativo {
-    display: block;
-  }
 
   .loading-screen {
     position: fixed;
