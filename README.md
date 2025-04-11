@@ -1,4 +1,4 @@
-# Formulário de Inscrição - Trilhas Inova | Desafio 3 - Front-End
+# Formulário de Inscrição - Trilhas Inova | Desafio 3 - Front-End    🚀👩‍🚀
 Este projeto foi desenvolvido como parte do **Desafio 3** da **Trilha de Front-End** do programa **Trilhas Inova**, com apoio da **SECTI** e da **FAPEMA**. O objetivo é aplicar conhecimentos em HTML, CSS e JavaScript na construção de uma página de inscrição funcional, moderna e responsiva.
 
 ## 🧩 Sobre o Projeto
@@ -11,42 +11,47 @@ O Governo do Estado do Maranhão, por meio da SECTI em parceria com a FAPEMA, bu
 Siga os passos abaixo para executar o projeto localmente:
 
 # Clone o repositório:
+```bash
 git clone https://github.com/sarahrebecadev/Formulario-TRILHASINOVA.git
+```
 
-# Acesse a pasta do projeto:
+## Acesse a pasta do projeto:
+```bash
 cd Formulario-TRILHASINOVA/html
+```
 
-# Abra o arquivo index.html no navegador:
+## Abra o arquivo ``index.html`` no navegador:
 
 Dê um duplo clique no arquivo, ou
 
 Utilize a extensão Live Server no VS Code para uma visualização dinâmica.
 
 ## 🛠️ Tecnologias Utilizadas
-HTML5: Estruturação semântica das páginas.
+- **HTML5:** Estruturação semântica das páginas.
 
-CSS3: Estilização visual com Flexbox, Grid e Media Queries.
+- **CSS3:** Estilização visual com Flexbox, Grid e Media Queries.
 
-JavaScript: Validações, máscaras, preenchimento automático via API e uso de localStorage.
+- **JavaScript:** Validações, máscaras, preenchimento automático via API e uso de localStorage.
 
-## ✨ Funcionalidades
-Layout moderno e adaptável a diferentes tamanhos de tela.
+##✨ Funcionalidades
+- Layout moderno e adaptável a diferentes tamanhos de tela.
 
-Validação automática de campos obrigatórios.
+- Validação automática de campos obrigatórios.
 
-Máscaras para CPF, telefone e CEP.
+- Máscaras para CPF, telefone e CEP.
 
-Preenchimento automático de endereço via CEP.
+- Preenchimento automático de endereço via CEP.
 
-Upload de documentos.
+- Upload de documentos.
 
-Salvamento dos dados no navegador (localStorage).
+- Salvamento dos dados no navegador (localStorage).
 
-Geração de PDF com os dados preenchidos.
+- Geração de PDF com os dados preenchidos.
 
-Botão de cancelamento que limpa os dados do formulário.
+- Botão de cancelamento que limpa os dados do formulário.
 
 ## 📁 Estrutura de Arquivos
+```
 Formulario-TRILHASINOVA/
 └── html/
     ├── index.html
@@ -73,6 +78,7 @@ Formulario-TRILHASINOVA/
         ├── image.png
         ├── logo.png
         ├── upload.png
+```
 
 ## 📌 Observações
 Este projeto tem fins educacionais e foi desenvolvido como prática da trilha de Front-End do Trilhas Inova. Feedbacks e sugestões são sempre bem-vindos!
