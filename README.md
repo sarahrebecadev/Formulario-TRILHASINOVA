@@ -33,7 +33,7 @@ Utilize a extensão Live Server no VS Code para uma visualização dinâmica.
 
 - **JavaScript:** Validações, máscaras, preenchimento automático via API e uso de localStorage.
 
-##✨ Funcionalidades
+## ✨ Funcionalidades
 - Layout moderno e adaptável a diferentes tamanhos de tela.
 
 - Validação automática de campos obrigatórios.
