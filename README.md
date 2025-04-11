@@ -1,47 +1,35 @@
-Formulário de Inscrição - Trilhas Inova | Desafio 3 - Front-End
+# Formulário de Inscrição - Trilhas Inova | Desafio 3 - Front-End
+Este projeto foi desenvolvido como parte do **Desafio 3** da **Trilha de Front-End** do programa **Trilhas Inova**, com apoio da **SECTI** e da **FAPEMA**. O objetivo é aplicar conhecimentos em HTML, CSS e JavaScript na construção de uma página de inscrição funcional, moderna e responsiva.
 
-Este projeto foi desenvolvido como parte do Desafio 3 da trilha de Front-End do programa Trilhas Inova, com apoio da SECTI e da FAPEMA. O objetivo é aplicar conhecimentos em HTML, CSS e JavaScript para construir uma página de inscrição funcional, moderna e responsiva.
+## 🧩 Sobre o Projeto
+O sistema simula um formulário de inscrição para o programa Trilhas Inova, com foco em responsividade, acessibilidade e interatividade. Entre os recursos implementados estão validações de campos, máscaras de input, preenchimento automático de endereço via CEP, upload de documentos, geração de PDF e armazenamento local dos dados.
 
-🧩 Sobre o Projeto
+## 📌 Contexto do Desafio
+O Governo do Estado do Maranhão, por meio da SECTI em parceria com a FAPEMA, busca otimizar seu sistema de inscrição, tornando-o mais acessível, dinâmico e eficiente, visando melhorar a experiência dos candidatos no processo de entrada no programa de formação tecnológica.
 
-O sistema simula um formulário de inscrição para o programa Trilhas Inova, com foco em responsividade, acessibilidade e interatividade. Foram implementadas validações de campos, preenchimento automático, geração de PDF e salvamento dos dados localmente.
+## 🚀 Como Rodar Localmente
+Siga os passos abaixo para executar o projeto localmente:
 
-📌 Contexto do Desafio
-
-O Governo do Estado do Maranhão, por meio da SECTI e FAPEMA, busca otimizar seu sistema de inscrição para torná-lo mais acessível, dinâmico e eficiente, visando melhorar a experiência dos candidatos no processo de entrada no programa de formação tecnológica.
-
-🚀 Como Rodar Localmente
-
-1. Clone o repositório:
-
+# Clone o repositório:
 git clone https://github.com/sarahrebecadev/Formulario-TRILHASINOVA.git
 
-
-2. Acesse a pasta do projeto:
-
+# Acesse a pasta do projeto:
 cd Formulario-TRILHASINOVA/html
 
+# Abra o arquivo index.html no navegador:
 
-3. Abra o arquivo index.html no navegador:
+Dê um duplo clique no arquivo, ou
 
-Dê um duplo clique, ou
+Utilize a extensão Live Server no VS Code para uma visualização dinâmica.
 
-Use a extensão Live Server no VS Code para uma visualização dinâmica.
-
-
-
-
-🛠️ Tecnologias Utilizadas
-
+## 🛠️ Tecnologias Utilizadas
 HTML5: Estruturação semântica das páginas.
 
-CSS3: Estilização visual e responsividade com Flexbox, Grid e Media Queries.
+CSS3: Estilização visual com Flexbox, Grid e Media Queries.
 
-JavaScript: Validações, máscaras, preenchimento via API e manipulação de localStorage.
+JavaScript: Validações, máscaras, preenchimento automático via API e uso de localStorage.
 
-
-✨ Funcionalidades
-
+## ✨ Funcionalidades
 Layout moderno e adaptável a diferentes tamanhos de tela.
 
 Validação automática de campos obrigatórios.
@@ -54,11 +42,11 @@ Upload de documentos.
 
 Salvamento dos dados no navegador (localStorage).
 
-Botão de cancelamento que limpa os dados preenchidos.
+Geração de PDF com os dados preenchidos.
 
+Botão de cancelamento que limpa os dados do formulário.
 
-📁 Estrutura de Arquivos
-
+## 📁 Estrutura de Arquivos
 Formulario-TRILHASINOVA/
 └── html/
     ├── index.html
@@ -86,12 +74,10 @@ Formulario-TRILHASINOVA/
         ├── logo.png
         ├── upload.png
 
-📌 Observações
+## 📌 Observações
+Este projeto tem fins educacionais e foi desenvolvido como prática da trilha de Front-End do Trilhas Inova. Feedbacks e sugestões são sempre bem-vindos!
 
-Este projeto foi desenvolvido com fins educacionais, como parte prática do programa Trilhas Inova. Todo feedback é bem-vindo!
+# Desenvolvido por
+[Sarah Rebeca Lima Cunha]( https://github.com/sarahrebecadev ) 😼
 
-👥 Desenvolvido por
-
-Sarah Rebeca
-
-José Henrique
+[José Henrique Alencar do Nascimento](https://github.com/Jose-henrique16) 👨🏽‍💻
